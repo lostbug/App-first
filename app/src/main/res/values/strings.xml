@@ -1,0 +1,8 @@
+<resources>
+    <!--MainActivity-->
+    <string name="app_name">App-first</string>
+    <string name="title_home">Home</string>
+    <string name="title_client">Client</string>
+    <string name="title_orders">Orders</string>
+    <string name="title_mine">Mine</string>
+</resources>
