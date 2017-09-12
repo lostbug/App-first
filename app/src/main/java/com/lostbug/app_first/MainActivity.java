@@ -3,7 +3,6 @@ package com.lostbug.app_first;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,48 +17,25 @@ import com.lostbug.app_first.orders.OrdersFragment;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView navigation;
-//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-//
-//        @Override
-//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//            switch (item.getItemId()) {
-//                case R.id.navigation_home:
-//                    return true;
-//                case R.id.navigation_client:
-//
-//                    return true;
-//                case R.id.navigation_orders:
-//
-//                    return true;
-//                case R.id.navigation_mine:
-//                    return true;
-//            }
-//            return false;
-//        }
-//
-//    };
-//
-//    public MainActivity(BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener) {
-//        this.mOnNavigationItemSelectedListener = mOnNavigationItemSelectedListener;
-//    }
-
+    ViewPager mViewPage;
+    final static String TAG="MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
-//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setOnNavigationItemSelectedListener(this);
         ArrayList<BaseFragment> fragments=new ArrayList<>();
         fragments.add(new HomeFragment());
         fragments.add(new ClientFragment());
         fragments.add(new OrdersFragment());
         fragments.add(new MineFragment());
-        ViewPager mViewPage=(ViewPager)findViewById(R.id.main_viewPager);
+         mViewPage=(ViewPager)findViewById(R.id.main_viewPager);
         MainAdapter mainAdapter=new MainAdapter(getSupportFragmentManager(),fragments);
         mViewPage.setAdapter(mainAdapter);
+        mViewPage.addOnPageChangeListener(this);
     }
 
     @Override
@@ -69,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public void onPageSelected(int position) {
-        Log.e("当前界面",position+"");
+        Log.e(TAG,"当前界面"+position);
         int id;
         switch (position){
             case 0:
@@ -98,16 +74,19 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Log.d(TAG,"当前id:"+item.getItemId());
         switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    mViewPage.setCurrentItem(0);
                     return true;
                 case R.id.navigation_client:
-
+                    mViewPage.setCurrentItem(1);
                     return true;
                 case R.id.navigation_orders:
-
+                    mViewPage.setCurrentItem(2);
                     return true;
                 case R.id.navigation_mine:
+                    mViewPage.setCurrentItem(3);
                     return true;
             }
             return false;
