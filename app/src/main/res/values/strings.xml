@@ -5,4 +5,14 @@
     <string name="title_client">Client</string>
     <string name="title_orders">Orders</string>
     <string name="title_mine">Mine</string>
+    <!--home-fragment-->
+    <string name="title_message">Message</string>
+    <string name="new_customer">New Customer</string>
+    <string name="customer_statistics">Customer Statistics</string>
+    <string name="schedule_remind">Schedule Remind</string>
+    <string name="check_all">Check All</string>
+    <string name="focused_customer">Focused Customers</string>
+    <string name="measure">measure</string>
+    <string name="install">install</string>
+    <string name="sold_service">sold service</string>
 </resources>

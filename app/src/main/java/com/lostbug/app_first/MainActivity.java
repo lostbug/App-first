@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.lostbug.app_first.adapters.MainAdapter;
+import com.lostbug.app_first.base.BaseActivity;
 import com.lostbug.app_first.base.BaseFragment;
 import com.lostbug.app_first.client.ClientFragment;
 import com.lostbug.app_first.home.HomeFragment;
@@ -17,7 +18,7 @@ import com.lostbug.app_first.orders.OrdersFragment;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener,BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView navigation;
     ViewPager mViewPage;
     final static String TAG="MainActivity";
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setItemIconTintList(null);
         navigation.setOnNavigationItemSelectedListener(this);
         ArrayList<BaseFragment> fragments=new ArrayList<>();
         fragments.add(new HomeFragment());
@@ -88,8 +90,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 case R.id.navigation_mine:
                     mViewPage.setCurrentItem(3);
                     return true;
+                default:
+                    return false;
             }
-            return false;
         }
 
 }

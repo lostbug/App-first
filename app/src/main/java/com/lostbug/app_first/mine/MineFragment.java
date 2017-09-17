@@ -15,13 +15,15 @@ public class MineFragment extends BaseFragment {
         return R.layout.fragment_mine;
     }
 
-    @Override
-    public BaseFragment getFragmentInstance() {
-        return new MineFragment();
-    }
 
     @Override
     public void setViewClick(View v) {
 
+    }
+
+
+    @Override
+    public void setMenu() {
+        hasMenu=false;
     }
 }

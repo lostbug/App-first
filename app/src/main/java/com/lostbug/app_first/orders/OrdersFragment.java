@@ -21,8 +21,9 @@ public class OrdersFragment extends BaseFragment {
     }
 
     @Override
-    public BaseFragment getFragmentInstance() {
-        return new OrdersFragment();
+    public void setMenu() {
+        hasMenu = false;
     }
+
 }
 

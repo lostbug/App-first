@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--MainActivity-->
+    <string name="app_name">App-first</string>
+    <string name="title_home">首页</string>
+    <string name="title_client">客户</string>
+    <string name="title_orders">订单</string>
+    <string name="title_mine">我的</string>
+    <!--home-fragment-->
+    <string name="title_message">消息</string>
+    <string name="new_customer">新客户</string>
+    <string name="customer_statistics">客户统计</string>
+    <string name="schedule_remind">日程提醒</string>
+    <string name="check_all">查看全部</string>
+    <string name="focused_customer">关注客户</string>
+    <string name="measure">测量</string>
+    <string name="install">安装</string>
+    <string name="sold_service">售后</string>
+</resources>

@@ -10,18 +10,22 @@ import com.lostbug.app_first.base.BaseFragment;
  */
 
 public class ClientFragment extends BaseFragment {
+
+
     @Override
     public int getFragmentViewId() {
         return R.layout.fragment_client;
     }
 
     @Override
-    public BaseFragment getFragmentInstance() {
-        return new ClientFragment();
-    }
-
-    @Override
     public void setViewClick(View v) {
 
+    }
+
+
+    @Override
+    public void setMenu() {
+        menuId = R.menu.menu_new_customer;
+        hasMenu = true;
     }
 }

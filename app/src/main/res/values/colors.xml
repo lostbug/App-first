@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="color_style_main">#25983a</color>
+    <!--home_fragment-->
+    <color name="color_customer_hint">#333333</color>
+    <color name="color_customer_number">#f5333c</color>
+    <color name="color_list_title_left_icon">#e46b02</color>
+    <color name="color_green_rect">#25983a</color>
+    <color name="color_orange_rect">#e46b02</color>
+    <color name="color_blue_rect">#169bd5</color>
+    <color name="color_white_rect">#ffffff</color>
+    <color name="color_customer_type">#ec6726</color>
 </resources>
